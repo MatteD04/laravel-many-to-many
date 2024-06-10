@@ -10,6 +10,16 @@
         <strong>Type</strong>: {{ $project->type ? $project->type->name : 'non specificato' }}
     </div>
     <div>
+        <strong>Technologies</strong>:
+        @if (count($project->technologies) > 0)
+            @foreach ($project->technologies as $technology)
+                {{ $technology->name }}
+            @endforeach
+        @else
+            non specificate
+        @endif
+    </div>
+    <div>
         <strong>Slug</strong>: {{ $project->slug }}
     </div>
     <div>
